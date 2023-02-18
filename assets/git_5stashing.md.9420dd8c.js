@@ -1,0 +1,18 @@
+import{_ as s,c as n,o as a,a as l}from"./app.78cd51cb.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[{"level":3,"title":"1.\u7528\u6CD5","slug":"_1-\u7528\u6CD5","link":"#_1-\u7528\u6CD5","children":[]},{"level":3,"title":"2.\u51B2\u7A81","slug":"_2-\u51B2\u7A81","link":"#_2-\u51B2\u7A81","children":[]}],"relativePath":"git/5stashing.md"}'),e={name:"git/5stashing.md"},p=l(`<h3 id="_1-\u7528\u6CD5" tabindex="-1">1.\u7528\u6CD5 <a class="header-anchor" href="#_1-\u7528\u6CD5" aria-hidden="true">#</a></h3><div class="language-shell line-numbers-mode"><button class="copy"></button><span class="lang">shell</span><pre><code><span class="line"><span style="color:#676E95;"># \u5F53\u4FEE\u6539\u4E86\u6587\u4EF6\uFF0C\u60F3\u5207\u6362\u5230\u5176\u4ED6\u5206\u652F\uFF0C\u4E0D\u60F3commit\u7684\u65F6\u5019\uFF0C\u5C31\u5148\u628A\u6587\u4EF6\u6682\u5B58\u8D77\u6765</span></span>
+<span class="line"><span style="color:#676E95;"># save &#39;xxx&#39;\u4EE3\u8868\u662F\u6682\u5B58\u7684\u4FE1\u606F\uFF0C\u53EF\u52A0\u53EF\u4E0D\u52A0</span></span>
+<span class="line"><span style="color:#A6ACCD;">git stath save </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">\u6682\u5B58\u4E00\u4E0B\u6587\u4EF6</span><span style="color:#89DDFF;">&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#676E95;"># \u73B0\u5728\u53EF\u4EE5\u5207\u6362\u5230\u5176\u4ED6\u5206\u652F</span></span>
+<span class="line"><span style="color:#A6ACCD;">git checkout dev</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#676E95;"># \u518D\u5207\u6362\u56DEmaster\u5206\u652F</span></span>
+<span class="line"><span style="color:#A6ACCD;">git checkout master</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#676E95;"># \u7136\u540E\u5C06\u6682\u5B58\u7684\u6587\u4EF6\u91CD\u65B0\u5F04\u56DE\u6765</span></span>
+<span class="line"><span style="color:#A6ACCD;">git stash pop</span></span>
+<span class="line"></span></code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="_2-\u51B2\u7A81" tabindex="-1">2.\u51B2\u7A81 <a class="header-anchor" href="#_2-\u51B2\u7A81" aria-hidden="true">#</a></h3><div class="language- line-numbers-mode"><button class="copy"></button><span class="lang"></span><pre><code><span class="line"><span style="color:#A6ACCD;">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span></span>
+<span class="line"><span style="color:#A6ACCD;">	// \u4F60\u7684\u4EE3\u7801</span></span>
+<span class="line"><span style="color:#A6ACCD;">==============</span></span>
+<span class="line"><span style="color:#A6ACCD;">	// \u522B\u4EBA\u7684\u4EE3\u7801</span></span>
+<span class="line"><span style="color:#A6ACCD;">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; your branch name</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div>`,4),t=[p];function c(r,i,o,b,d,u){return a(),n("div",null,t)}const h=s(e,[["render",c]]);export{_ as __pageData,h as default};

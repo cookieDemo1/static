@@ -1,0 +1,78 @@
+import{_ as s,c as n,o as a,a as l}from"./app.78cd51cb.js";const F=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[{"level":3,"title":"1.timer\u7684\u57FA\u672C\u4F7F\u7528","slug":"_1-timer\u7684\u57FA\u672C\u4F7F\u7528","link":"#_1-timer\u7684\u57FA\u672C\u4F7F\u7528","children":[]},{"level":3,"title":"2.\u5B9A\u65F6\u5668\u914D\u5408goroutine","slug":"_2-\u5B9A\u65F6\u5668\u914D\u5408goroutine","link":"#_2-\u5B9A\u65F6\u5668\u914D\u5408goroutine","children":[]}],"relativePath":"go/43\u5B9A\u65F6\u5668.md"}'),p={name:"go/43\u5B9A\u65F6\u5668.md"},e=l(`<h3 id="_1-timer\u7684\u57FA\u672C\u4F7F\u7528" tabindex="-1">1.timer\u7684\u57FA\u672C\u4F7F\u7528 <a class="header-anchor" href="#_1-timer\u7684\u57FA\u672C\u4F7F\u7528" aria-hidden="true">#</a></h3><div class="language-go line-numbers-mode"><button class="copy"></button><span class="lang">go</span><pre><code><span class="line"><span style="color:#89DDFF;">package</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#89DDFF;">import</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">(</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#89DDFF;">&quot;</span><span style="color:#FFCB6B;">fmt</span><span style="color:#89DDFF;">&quot;</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#89DDFF;">&quot;</span><span style="color:#FFCB6B;">time</span><span style="color:#89DDFF;">&quot;</span></span>
+<span class="line"><span style="color:#89DDFF;">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#89DDFF;">func</span><span style="color:#A6ACCD;"> </span><span style="color:#82AAFF;">main</span><span style="color:#89DDFF;">(){</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">// 1.timer\u7684\u57FA\u672C\u4F7F\u7528</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//timer1 := time.NewTimer(2 * time.Second)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//t1 := time.Now()</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//fmt.Println(t1)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//t2 := &lt;- timer1.C</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//fmt.Println(t2)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">// 2.\u9A8C\u8BC1timer\u53EA\u80FD\u54CD\u5E94\u4E00\u6B21\uFF08\u8FD9\u91CC\u4F1A\u5F15\u53D1\u5F02\u5E38\uFF09</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//timer2 := time.NewTimer(time.Second)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//for{</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//	&lt;- timer2.C</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//	fmt.Println(&quot;\u65F6\u95F4\u5230&quot;)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">// 3.timer\u5B9E\u73B0\u5EF6\u65F6\u7684\u529F\u80FD</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//time.Sleep(time.Second)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//timer3 := time.NewTimer(2 * time.Second)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//&lt;- timer3.C</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//fmt.Println(&quot;2\u79D2\u5230&quot;)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//&lt;- time.After(2*time.Second)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//fmt.Println(&quot;2\u79D2\u5230&quot;)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">// 4.\u505C\u6B62\u5B9A\u65F6\u5668</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//timer4 := time.NewTimer(2 * time.Second)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//go func() {</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//	&lt;- timer4.C</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//	fmt.Println(&quot;\u5B9A\u65F6\u5668\u6267\u884C\u4E86&quot;)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//}()</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//b := timer4.Stop()	// \u5173\u95ED\u4E86\uFF0C\u4E0A\u9762\u90A3\u4E2A\u534F\u7A0B\u4E0D\u4F1A\u6267\u884C</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//if b{</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//	fmt.Println(&quot;timer4\u5DF2\u7ECF\u5173\u95ED&quot;)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">//}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">// 5.\u91CD\u7F6E\u5B9A\u65F6\u5668</span></span>
+<span class="line"><span style="color:#A6ACCD;">	timer5 </span><span style="color:#89DDFF;">:=</span><span style="color:#A6ACCD;"> time</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">NewTimer</span><span style="color:#89DDFF;">(</span><span style="color:#F78C6C;">3</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">*</span><span style="color:#A6ACCD;"> time</span><span style="color:#89DDFF;">.</span><span style="color:#A6ACCD;">Second</span><span style="color:#89DDFF;">)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	timer5</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">Reset</span><span style="color:#89DDFF;">(</span><span style="color:#F78C6C;">1</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">*</span><span style="color:#A6ACCD;"> time</span><span style="color:#89DDFF;">.</span><span style="color:#A6ACCD;">Second</span><span style="color:#89DDFF;">)</span></span>
+<span class="line"><span style="color:#A6ACCD;">	fmt</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">Println</span><span style="color:#89DDFF;">(</span><span style="color:#A6ACCD;">time</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">Now</span><span style="color:#89DDFF;">())</span></span>
+<span class="line"><span style="color:#A6ACCD;">	fmt</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">Println</span><span style="color:#89DDFF;">(&lt;-</span><span style="color:#A6ACCD;"> timer5</span><span style="color:#89DDFF;">.</span><span style="color:#A6ACCD;">C</span><span style="color:#89DDFF;">)</span></span>
+<span class="line"><span style="color:#89DDFF;">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br></div></div><h3 id="_2-\u5B9A\u65F6\u5668\u914D\u5408goroutine" tabindex="-1">2.\u5B9A\u65F6\u5668\u914D\u5408goroutine <a class="header-anchor" href="#_2-\u5B9A\u65F6\u5668\u914D\u5408goroutine" aria-hidden="true">#</a></h3><ul><li>timer.NewTicker\u548CJS\u7684setInterval\u7C7B\u4F3C</li></ul><div class="language-go line-numbers-mode"><button class="copy"></button><span class="lang">go</span><pre><code><span class="line"><span style="color:#89DDFF;">package</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#89DDFF;">import</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">(</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#89DDFF;">&quot;</span><span style="color:#FFCB6B;">fmt</span><span style="color:#89DDFF;">&quot;</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#89DDFF;">&quot;</span><span style="color:#FFCB6B;">time</span><span style="color:#89DDFF;">&quot;</span></span>
+<span class="line"><span style="color:#89DDFF;">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#89DDFF;">func</span><span style="color:#A6ACCD;"> </span><span style="color:#82AAFF;">main</span><span style="color:#89DDFF;">(){</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">// 1.\u83B7\u53D6ticker\u5BF9\u8C61</span></span>
+<span class="line"><span style="color:#A6ACCD;">	ticker </span><span style="color:#89DDFF;">:=</span><span style="color:#A6ACCD;"> time</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">NewTicker</span><span style="color:#89DDFF;">(</span><span style="color:#F78C6C;">1</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">*</span><span style="color:#A6ACCD;"> time</span><span style="color:#89DDFF;">.</span><span style="color:#A6ACCD;">Second</span><span style="color:#89DDFF;">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A6ACCD;">	i </span><span style="color:#89DDFF;">:=</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">0</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#89DDFF;">go</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">func()</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">		</span><span style="color:#89DDFF;">for</span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">			i</span><span style="color:#89DDFF;">++</span></span>
+<span class="line"><span style="color:#A6ACCD;">			fmt</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">Println</span><span style="color:#89DDFF;">(&lt;-</span><span style="color:#A6ACCD;">ticker</span><span style="color:#89DDFF;">.</span><span style="color:#A6ACCD;">C</span><span style="color:#89DDFF;">)</span></span>
+<span class="line"><span style="color:#A6ACCD;">			</span><span style="color:#89DDFF;">if</span><span style="color:#A6ACCD;"> i </span><span style="color:#89DDFF;">==</span><span style="color:#A6ACCD;"> </span><span style="color:#F78C6C;">5</span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">				</span><span style="color:#676E95;">// \u505C\u6B62</span></span>
+<span class="line"><span style="color:#A6ACCD;">				ticker</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">Stop</span><span style="color:#89DDFF;">()</span></span>
+<span class="line"><span style="color:#A6ACCD;">			</span><span style="color:#89DDFF;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;">		</span><span style="color:#89DDFF;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#89DDFF;">}()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#676E95;">// \u4E3A\u4E86\u4E0D\u8BA9\u534F\u7A0B\u9000\u51FA</span></span>
+<span class="line"><span style="color:#A6ACCD;">	</span><span style="color:#89DDFF;">for</span><span style="color:#89DDFF;">{}</span></span>
+<span class="line"><span style="color:#89DDFF;">}</span></span>
+<span class="line"></span></code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div>`,5),o=[e];function r(t,c,i,D,y,A){return a(),n("div",null,o)}const b=s(p,[["render",r]]);export{F as __pageData,b as default};

@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.78cd51cb.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"go/4\u547D\u4EE4.md"}'),p={name:"go/4\u547D\u4EE4.md"},e=l("",2),r=[e];function c(o,i,t,b,A,C){return a(),n("div",null,r)}const _=s(p,[["render",c]]);export{m as __pageData,_ as default};

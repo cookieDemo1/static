@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as s,a as o}from"./app.78cd51cb.js";const c="/assets/github.2cb03d37.jpg",b=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"index.md"}'),a={name:"index.md"},i=o("",4),p=[i];function r(_,n,l,d,m,u){return s(),e("div",null,p)}const f=t(a,[["render",r]]);export{b as __pageData,f as default};
